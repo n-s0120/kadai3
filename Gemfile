@@ -68,3 +68,6 @@ gem "jquery-rails"
 gem "font-awesome-sass", '~>5.13'
 
 gem 'coffee-script-source', '1.12.2'
+
+gem "refile", require: "refile/rails", github: "manfe/refile"
+gem "refile-mini_magick"
