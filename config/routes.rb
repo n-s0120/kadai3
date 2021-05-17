@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/show'
   devise_for :users
+  get 'users/show'
   root to:"homes#top"
   get "homes/about"
+  resources :users
   resources :books, only: [:new, :create, :index, :show, :destroy]
-  post "users/sign_up" => "users/show"
 end
