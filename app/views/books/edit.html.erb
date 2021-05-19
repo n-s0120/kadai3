@@ -1,3 +1,5 @@
+boosのedit
+
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -19,7 +21,7 @@
             <a class="fas fa-user-plus nav-link text-light" href="/books">books</a>
           </li>
           <li>
-            <a class="fas fa-sign-in-alt nav-link text-light">
+            <a class="fas fa-sign-in-alt nav-link text-light" href="/">
               <%= link_to "logout", destroy_user_session_path, method: :delete %></a>
           </li>
         </ul>
@@ -30,34 +32,33 @@
 
 <main>
   <p id="notice"></p>
-
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-        <h2>User info</h2>
+        <h1>Editing Book</h1>
 
-        <%= form_with model: @user, local:true do |f| %>
+      <%= form_with model: @book, local:true do |f| %>
 
         <div class="form-group">
-        <h4>Name</h4>
-        <%= f.text_field :name %>
+        <h4>Title</h4>
+        <%= f.text_field :title %>
         </div>
 
         <div class="form-group">
-        <h4>Image</h4>
-        <%= f.attachment_field :profile_image %>
+        <h4>Opinion</h4>
+        <%= f.text_area :body %>
         </div>
 
         <div class="form-group">
-        <h4>Introduction</h4>
-        <%= f.text_area :introduction %>
+        <%= f.submit 'Update Book' %>
         </div>
 
-        <div class="form-group">
-        <%= f.submit 'Update User' %>
-        </div>
-      <% end %>
+        <%= link_to "Show",books_path %>
+
+        | Back
       </div>
+      <% end %>
+
     </div>
   </div>
 </main>
