@@ -29,8 +29,22 @@ booksのindex
   </nav>
 </header>
 
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+  <% @book.errors.full_messages.each do |book| %>
+   <%= book %>
+  <% end %>
+<% end %>
+
 <main>
-  <p id="notice"></p>
+
+  <%if flash.notice%>
+    <p class="notice"><%= notice %></p>
+  <%end%>
+  <%if flash.alert%>
+    <p class="alert"><%= alert %></p>
+  <%end%>
+
   <div class="container px-5 px-sm0">
     <div class="row">
       <div class="col-md-3">
@@ -72,7 +86,7 @@ booksのindex
         </div>
 
         <div class="form-group">
-        <%= f.submit "Create Book" %>
+        <%= f.submit "Create Book",class:"btn btn-success" %>
         </div>
       </div>
 
@@ -107,3 +121,12 @@ booksのindex
   </div>
 </main>
 
+<footer>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="mx-auto">
+        <p>CopyRight Infratop.inc</p>
+      </div>
+    </div>
+  </div>
+</footer>

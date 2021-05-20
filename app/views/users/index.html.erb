@@ -30,7 +30,14 @@ Usersのindex
 </header>
 
 <main>
-  <p id="notice"></p>
+
+  <%if flash.notice%>
+    <p class="notice"><%= notice %></p>
+  <%end%>
+  <%if flash.alert%>
+    <p class="alert"><%= alert %></p>
+  <%end%>
+
   <div class="container px-5 px-sm-0">
     <div class="row">
       <div class="col-md-3">
@@ -72,7 +79,7 @@ Usersのindex
         </div>
 
         <div class="form-group">
-        <%= f.submit "Create Book" %>
+        <%= f.submit "Create Book",class:"btn btn-success" %>
         </div>
       </div>
 
@@ -105,3 +112,13 @@ Usersのindex
     </div>
   </div>
 </main>
+
+<footer>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="mx-auto">
+        <p>CopyRight Infratop.inc</p>
+      </div>
+    </div>
+  </div>
+</footer>
