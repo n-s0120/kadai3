@@ -39,13 +39,18 @@ Usersのshow
         <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
 
         <table class="table">
+          <tbody>
+            <tr></tr>
+            <tr>
+              <th>name</th>
+              <th><%= @user.name %></th>
+            </tr>
 
-          <h4>name</h4>
-          <p><%= @user.name %></p>
-
-          <h4>introduction</h4>
-          <p><%= @user.introduction %></p>
-
+            <tr>
+              <th>introduction</th>
+              <th><%= @user.introduction %></th>
+            </tr>
+          </tbody>
         </table>
 
         <div class="row">
@@ -85,11 +90,11 @@ Usersのshow
           </thead>
 
           <tbody>
-            <% @users.each do |user| %>
+            <% @books.each do |book| %>
             <tr>
-              <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60 %></td>
-              <td><%= user.name %></td>
-              <td><%= user.name %></td>
+              <td><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
+              <td><%= link_to book.title, book_path(book)  %></td>
+              <td><%= book.body %></td>
             </tr>
             <% end %>
           </tbody>
