@@ -84,3 +84,22 @@
   vertical-align:top;
   border-top:1px solid #dee2e6;
  }
+
+ .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+  width:100%;
+  padding-right:15px;
+  padding-left:15px;
+  margin-right:auto;
+  margin-left:auto;
+ }
+
+ #notice {
+  color: green;
+ }
+
+ .btn-sm, .btn-group-sm>.btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+ }
